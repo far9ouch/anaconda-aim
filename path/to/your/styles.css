@@ -1,0 +1,276 @@
+/* Base background for dark mode */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Bright text for dark background */
+    font-family: 'Arial', sans-serif; /* Example font */
+}
+
+/* Neon green and purple accents */
+.neon-green {
+    color: #39FF14; /* Vivid neon green */
+}
+
+.neon-purple {
+    color: #A020F0; /* Deep neon purple */
+}
+
+/* Styling links */
+a {
+    color: #39FF14; /* Neon green links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #A020F0; /* Neon purple on hover */
+}
+
+/* Additional styling for buttons and headers */
+button, h1, h2, h3 {
+    background-color: #2C2C2C; /* Darker elements for contrast */
+    border: 1px solid #39FF14; /* Neon green border */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #A020F0; /* Neon purple background on hover */
+    border-color: #ffffff;
+}
+
+/* Custom scroll bar with neon effects */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2C2C2C;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #39FF14; /* Neon green scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A020F0; /* Neon purple on hover */
+}
+
+/* Neon text effect with animation */
+.neon-text {
+    text-shadow: 0 0 5px #39FF14,
+                0 0 10px #39FF14,
+                0 0 20px #39FF14,
+                0 0 40px #39FF14;
+    animation: neonPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        text-shadow: 0 0 5px #39FF14,
+                     0 0 10px #39FF14,
+                     0 0 20px #39FF14,
+                     0 0 40px #39FF14;
+    }
+    to {
+        text-shadow: 0 0 5px #A020F0,
+                     0 0 10px #A020F0,
+                     0 0 20px #A020F0,
+                     0 0 40px #A020F0;
+    }
+}
+
+/* Login form styling */
+.login-container {
+    background: rgba(44, 44, 44, 0.9);
+    border: 2px solid #39FF14;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 20px #39FF14;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #1a1a1a;
+    border: 1px solid #39FF14;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #A020F0;
+    box-shadow: 0 0 10px #A020F0;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #39FF14, #A020F0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #39FF14;
+}
+
+/* Card effect for content */
+.game-card {
+    background: rgba(44, 44, 44, 0.9);
+    border: 1px solid #39FF14;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    transition: all 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #39FF14;
+}
+
+/* Navigation bar styling */
+.nav-bar {
+    background: rgba(18, 18, 18, 0.95);
+    border-bottom: 2px solid #39FF14;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: #39FF14;
+    margin: 0 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #A020F0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Particle effect */
+.particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #39FF14;
+    border-radius: 50%;
+    animation: particleFall linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes particleFall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Shake animation for invalid inputs */
+.shake-animation {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Success animation */
+.success-animation {
+    text-align: center;
+    padding: 20px;
+}
+
+.checkmark {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: inset 0 0 0 #39FF14;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark::before, .checkmark::after {
+    content: '';
+    position: absolute;
+    background: #39FF14;
+}
+
+.checkmark::before {
+    width: 3px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    animation: checkmark-before 0.8s ease-in-out forwards;
+}
+
+.checkmark::after {
+    width: 3px;
+    height: 60px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    animation: checkmark-after 0.8s ease-in-out forwards;
+}
+
+@keyframes fill {
+    100% { box-shadow: inset 0 0 0 100px #39FF14; }
+}
+
+@keyframes scale {
+    0%, 100% { transform: none; }
+    50% { transform: scale3d(1.1, 1.1, 1); }
+}
+
+@keyframes checkmark-before {
+    0% { height: 0; opacity: 0; }
+    100% { height: 30px; opacity: 1; }
+}
+
+@keyframes checkmark-after {
+    0% { height: 0; opacity: 0; }
+    100% { height: 60px; opacity: 1; }
+}
+
+/* Smooth transitions for all elements */
+* {
+    transition: all 0.3s ease;
+} 
